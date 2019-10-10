@@ -1,7 +1,12 @@
 <template>
+
+<!--on submit we add the item to the list-->
     <form class="popup modal" @submit="addTodo" v-show="value">
-        <div  @click.prevent="close"
- class="modal-background"></div>
+
+        <!--bg for the mobile popup, which closes the popup-->
+        <div  @click.prevent="close" class="modal-background"></div>
+
+        <!--popup-->
         <div class="modal-content">
             <div class="popup-bg">
                 <label class="label label-clr" for="item">Add your shopping item:</label>
@@ -9,7 +14,7 @@
                 <label class="label label-clr" for="item">Add the amount of your item:</label>
                 <input class="input" type="number" v-model="amount" name="amount"> <br> <br>
                 <input type="submit" value="Add" @click="close" class="button is-white">
-                <button class="button is-danger cancel-btn" @click.prevent="close">Cancel</button>
+                <button class="button cancel-btn" @click.prevent="close">Cancel</button>
             </div>
         </div>
         
@@ -17,6 +22,7 @@
 </template>
 
 <script>
+//this plugin makes a new id every time its triggered
 import uuid from 'uuid';
 import {
         db
@@ -45,7 +51,7 @@ export default {
                 completed: false
             }
             //send up to parent
-            this.$emit('add-todo', newTodo);
+            
 
             
                 
@@ -57,6 +63,7 @@ export default {
                     title: this.title,
                     amount: this.amount
                 })
+                
 
 
                 
@@ -106,7 +113,8 @@ export default {
     .popup-bg{
         padding: 2em;
         display: block;
-        background: #5ccdb3;
+        background: rgb(92,205,179);
+        background: linear-gradient(90deg, rgba(92,205,179,1) 0%, rgba(74,218,122,1) 95%);
         border-radius: 1em;
         margin: 0 1em 0 1em;
     }
@@ -117,6 +125,9 @@ export default {
 
     .cancel-btn{
         float: right;
+        background: #ff0000;
+        color: white;
+        border: none;
     }
 
 

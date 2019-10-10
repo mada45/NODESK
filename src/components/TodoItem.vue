@@ -1,4 +1,6 @@
 <template>
+
+    <!-- Binding a class "is-complete" on a condition todo.completed -->
     <div class="todo-item" v-bind:class="{'is-complete':todo.completed}">
 
         <div class="item-space">
@@ -13,6 +15,7 @@
             
             <div>
                 <label class="container">
+                  <!-- Binding a checkbox to a method markComplete -->
                     <input type="checkbox" v-on:change="markComplete ">
                     <span class="checkmark"></span>
                 </label>
@@ -30,6 +33,8 @@ export default {
     name: "TodoItem",
     props: ["todo"],
     methods: {
+
+      // method that is setting todo.completed to whatever it is not
         markComplete(){
             this.todo.completed = !this.todo.completed;
         }
@@ -37,6 +42,8 @@ export default {
 }
 </script>
 
+
+//scoped = style only for this particular file
 <style scoped>
 
 
@@ -131,6 +138,7 @@ export default {
   background: white;
 }
 
+/*on mobile item padding*/
 @media only screen and (max-width: 767px) {
    .todo-item{
         padding: 15px;

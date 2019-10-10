@@ -3,12 +3,13 @@
         <form @submit="addTodo">
             <input class="input" type="text" v-model="title" name="title" placeholder="Add item...">
             <input class="input" type="number" v-model="amount" name="amount" placeholder="Add amount...">
-            <input type="submit" value="Submit" class="button is-primary">
+            <input type="submit" value="Add" class="button add-btn">
         </form>
     </div>
 </template>
 
 <script>
+//this plugin makes a new id every time its triggered
 import uuid from 'uuid';
 import {
         db
@@ -31,12 +32,6 @@ export default {
                 amount: this.amount,
                 completed: false
             }
-            //send up to parent
-            this.$emit('add-todo', newTodo);
-
-            
-                
-            
             
                 this.loading = true
 
@@ -45,12 +40,6 @@ export default {
                     amount: this.amount
                 })
 
-                this.$notify({
-                    group: 'item-changed',
-                    type: 'success',
-                    title: 'Band Created',
-                    text: 'You have created a band successfully, well done!'
-                });
 
                 this.loading = false
 
@@ -98,6 +87,9 @@ export default {
         padding: 5px;
     }
 
-    
+    .add-btn{
+        background: white;
+        color: #4a4a4a;
+    }
     
 </style>
