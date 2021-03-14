@@ -1,29 +1,21 @@
-# flowershop
+# Nodesk
+Shopping list app - [Link]
 
-## Project setup
-```
-npm install
-```
+## Description
+One of my exams required me to build a simple progressive web app using Vue.js, Node.js and Firebase (database and hosting). Me and my teammates created a shopping list app to help users never forget what they have to buy.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Features
+- Add shopping list item
+- Remove shopping list item
+- Display shopping list items
+- Check shopping list item if bought already
+- Loading screen
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Languages and tools
+- Vue
+- Firebase
+- Bulma
+- SASS
+- HTML
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[Link]: https://nodesk-shopping-list-app.web.app/
